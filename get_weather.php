@@ -19,14 +19,18 @@ curl_setopt_array($curl, [
 
 $response = curl_exec($curl);
 $err = curl_error($curl);
+$windMidnight = $response.features[1].properties.timeSeries[0].midnight10MWindSpeed;
+$windMidday = $response.features[1].properties.timeSeries[0].midday10MWindSpeed;
 
 curl_close($curl);
 
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
-  echo $response;
+ echo $response;
+ // echo $windMidnight;
 }
 
-
-// /?gimmeflag=please
+// .features[0].properties.timeSeries[0].time
+// foreach ($json_output['orders'] as $billing_details) {
+// echo "<b>Name:</b><br>$billing_details['firstname'] $billing_details['lastname']<br>";}

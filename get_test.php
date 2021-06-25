@@ -26,3 +26,5 @@ foreach ($user_data as $user) {
 }
 
 ?>
+
+// this gets an array at response.data, and essentially maps it
