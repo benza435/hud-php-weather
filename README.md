@@ -15,5 +15,5 @@ Data required per day:
 - rain chance  
 - wind speed (average)    
 
-The JSON that comes from the API is more than we need.  The daily forecast data lives in an array at "$response.features[1].properties.timeSeries".  
+
 

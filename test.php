@@ -20,8 +20,6 @@ curl_setopt_array($curl, [
   ],
 ]);
 
-
-
 $response = curl_exec($curl);
 $data = json_decode($response);
 $err = curl_error($curl);
@@ -50,9 +48,7 @@ if ($err) {
     echo "min temp: ".$reading->dayLowerBoundMaxTemp;
     echo "<br>";
     echo "rain chance: ".$reading->dayProbabilityOfPrecipitation."%";
-    echo "<br>";
-      
-    
+    echo "<br>";    
     $wind1 = $reading->midday10MWindSpeed;
     $wind2 = $reading->midnight10MWindSpeed;
     echo "avg wind speed: ".round($wind1+$wind2/2)." mph";
