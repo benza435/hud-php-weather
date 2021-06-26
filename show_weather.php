@@ -27,10 +27,10 @@ if ($weather->num_rows > 0) {
     echo "<td style='padding:10px'>"
     ."<h2>".$row["format_day"]."</h2><br>"
     ."<h3>".$row["overview"]."</h3><br>"
-    ."<span>".$row["tempmax"]."</span><br>"
-    ."<span>".$row["tempmin"]."</span><br>"
-    ."<span>".$row["rainchance"]."</span><br>"
-    ."<span>".$row["wind"]."</span><br>"
+    ."<span><img src='/images/hot.png' height='20'/>  ".$row["tempmax"]."°C</span><br>"
+    ."<span><img src='/images/cold.png' height='20'/>  ".$row["tempmin"]."°C</span><br>"
+    ."<span><img src='/images/rain.png' height='20'/>  ".$row["rainchance"]."%</span><br>"
+    ."<span><img src='/images/wind.png' height='20'/>  ".$row["wind"]." mph</span><br>"
     ."</td>";
   }
   echo "</tr></table>";
