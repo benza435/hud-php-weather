@@ -1,8 +1,8 @@
 <html>
   <body>
-
+  <h1>data direct from MET API</h1>
 <?php
-
+include 'api_keys.php';
 $curl = curl_init();
 
 curl_setopt_array($curl, [
@@ -14,8 +14,8 @@ curl_setopt_array($curl, [
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "GET",
   CURLOPT_HTTPHEADER => [
-    "X-IBM-Client-Id: 11",
-    "X-IBM-Client-Secret: 12",
+    "X-IBM-Client-Id: $client_id",
+    "X-IBM-Client-Secret: $client_secret",
     "accept: application/json"
   ],
 ]);
@@ -25,6 +25,7 @@ $data = json_decode($response);
 $err = curl_error($curl);
 
 curl_close($curl);
+
 
 if ($err) {
   echo "cURL Error #:" . $err;
@@ -84,6 +85,8 @@ if ($err) {
 
 
 ?>
+
+<a href="index.html">home</a>
 </body>
 </html>
 

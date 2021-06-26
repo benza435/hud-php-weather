@@ -40,7 +40,7 @@ if ($weather->num_rows > 0) {
 $conn->close();
 ?>
 
-
+<a href="index.html">home</a>
 </body>
 </html>
 
