@@ -1,5 +1,12 @@
 <html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
   <body>
+  <a href="index.html">home</a>
   <h1>data direct from MET API</h1>
 <?php
 include 'api_keys.php';
@@ -62,31 +69,9 @@ if ($err) {
 
 
 
-
-
-
-// make an indexed array out output the second element... works ok
-// $test = array("one","two");
-// echo $test[1];
-
-// echo $data->type; // returns 'FeatureCollection'
-  // echo $data->features; // returns 'Array'
-  // echo $data->features[0]; // returns nothing
-  // echo $data->features[1]; // returns nothing
-  // echo "printR";
-  // print_r($data->features);  // returns Array ( [0] => stdClass Object ( [type....
-  // multidimenstinioal arrays here we go...
-  // print_r($data->features[1]); // returns nothing
-  // print_r($data->features[1][1]); // returns nothing
-  //print_r($data->features[0]);  // returns stdClass Object ( [type] => Fe....
-  //print_r($data->features[0]->properties->timeSeries[0]->time); // returns 'feature'
-  // 
-  // print_r($readings);
-
-
 ?>
 
-<a href="index.html">home</a>
+
 </body>
 </html>
 

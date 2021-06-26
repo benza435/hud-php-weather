@@ -1,7 +1,13 @@
 <html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
   <body>
-
-<h1>data from show_weather.data_cache:</h1>
+  <a href="index.html">home</a>
+<h1>data from weather_test.data_cache:</h1>
 <?php
 include 'connection.php';
 
@@ -40,7 +46,6 @@ if ($weather->num_rows > 0) {
 $conn->close();
 ?>
 
-<a href="index.html">home</a>
 </body>
 </html>
 
