@@ -14,8 +14,8 @@ curl_setopt_array($curl, [
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "GET",
   CURLOPT_HTTPHEADER => [
-    "X-IBM-Client-Id: a9203c50-f04f-4504-89b9-b6958915f6e2",
-    "X-IBM-Client-Secret: gR0kG1vQ6xV4nP2rY7iW1uN2mE6xJ4vK7aV4wX5jT4cH4pD0pT",
+    "X-IBM-Client-Id: 11",
+    "X-IBM-Client-Secret: 12",
     "accept: application/json"
   ],
 ]);
@@ -29,8 +29,9 @@ curl_close($curl);
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
-  echo "last updated ".$data->features[0]->properties->modelRunDate."<br>";
-  echo "<h1>Forecast:</h2>";
+  $updated = $data->features[0]->properties->modelRunDate;
+  echo "last updated ".$updated."<br>";
+
   $readings = $data->features[0]->properties->timeSeries;
   unset($readings[7]);
   unset($readings[6]);
