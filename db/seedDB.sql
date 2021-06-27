@@ -1,13 +1,13 @@
 USE weather_test;
 
 INSERT INTO data_cache
-(format_day,overview, tempmax, tempmin, rainchance, wind)
+(forecast_day,overview, tempmax, tempmin, rainchance, wind_min, wind_max)
 VALUES
-("monday",1,25,20,0,6),
-("tuesday",7,21,16,14,7),
-("wednesday",12,15,10,100,12),
-("thursday",29,7,5,89,25),
-("friday",1,26,22,0,2);
+("2021-06-27T00:00Z",1,25,20,0,6,10),
+("2021-06-28T00:00Z",7,21,16,14,7,10),
+("2021-06-29T00:00Z",12,15,10,100,12,14),
+("2021-06-30T00:00Z",29,7,5,89,25,30),
+("2021-07-01T00:00Z",1,26,22,0,2,4);
 
 INSERT INTO significant_codes
 (val,summary)
