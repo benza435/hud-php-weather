@@ -18,9 +18,20 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM data_cache";
+$sql = "SELECT 
+data_cache.format_day,  
+significant_codes.summary,
+data_cache.tempmax, 
+data_cache.tempmin, 
+data_cache.rainchance, 
+data_cache.wind
+FROM data_cache
+INNER JOIN significant_codes ON data_cache.overview=significant_codes.val;
+";
+
 $weather = $conn->query($sql);
 
+//  show the last updated time here somehow:
 //$update = "SELECT updated FROM data_cache LIMIT 1";
 //$last_update = $conn->query($update);
 //echo $last_update;
@@ -32,7 +43,7 @@ if ($weather->num_rows > 0) {
   while($row = $weather->fetch_assoc()) {
     echo "<td style='padding:10px'>"
     ."<h2>".$row["format_day"]."</h2><br>"
-    ."<h3>".$row["overview"]."</h3><br>"
+    ."<h3>".$row["summary"]."</h3><br>"
     ."<span><img src='/images/hot.png' height='20'/>  ".$row["tempmax"]."°C</span><br>"
     ."<span><img src='/images/cold.png' height='20'/>  ".$row["tempmin"]."°C</span><br>"
     ."<span><img src='/images/rain.png' height='20'/>  ".$row["rainchance"]."%</span><br>"
@@ -41,7 +52,7 @@ if ($weather->num_rows > 0) {
   }
   echo "</tr></table>";
 } else {
-  echo "0 results";
+  echo "0 results, try again";
 }
 $conn->close();
 ?>
