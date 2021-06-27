@@ -48,19 +48,13 @@ if ($err) {
 
   foreach ($readings as $reading){
     echo "<td>";
-    echo $reading->time;
-    echo "<br>";
-    echo "summary: ".$reading->daySignificantWeatherCode;
-    echo "<br>";
-    echo "max temp: ".$reading->dayUpperBoundMaxTemp;
-    echo "<br>";
-    echo "min temp: ".$reading->dayLowerBoundMaxTemp;
-    echo "<br>";
-    echo "rain chance: ".$reading->dayProbabilityOfPrecipitation."%";
-    echo "<br>";    
-    $wind1 = $reading->midday10MWindSpeed;
-    $wind2 = $reading->midnight10MWindSpeed;
-    echo "avg wind speed: ".round($wind1+$wind2/2)." mph";
+    echo $reading->time."<br>";
+    echo "summary: ".$reading->daySignificantWeatherCode."<br>";
+    echo "max temp: ".$reading->dayUpperBoundMaxTemp."<br>";
+    echo "min temp: ".$reading->dayLowerBoundMaxTemp."<br>";
+    echo "rain chance: ".$reading->dayProbabilityOfPrecipitation."%<br>";  
+    echo "wind day: ".$reading->midday10MWindSpeed."<br>";
+    echo "wind night: ".$reading->midnight10MWindSpeed."<br>";
     echo "<br><br>";
     echo "</td>";
   }
