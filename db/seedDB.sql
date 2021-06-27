@@ -1,4 +1,4 @@
-
+USE weather_test;
 
 INSERT INTO data_cache
 (format_day,overview, tempmax, tempmin, rainchance, wind)
