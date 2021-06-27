@@ -10,7 +10,8 @@ A tech test! I'd never properly used PHP before so it was... interesting.
 
 ## How?
 
-The LAMP stack. I am running Apache and mySQL locally, with web content accessible at 127.0.0.1.
+The LAMP stack. I am running Apache and mySQL locally, with web content accessible at 127.0.0.1.  
+[There was some Figma](https://www.figma.com/file/zxqUgtvYL6Xna7AqTkNDVP/LAMP-Stack-Weather-App?node-id=0%3A1) going on while I got started.
 
 The key components:
 
@@ -24,7 +25,9 @@ The key components:
 
 -`utils.php` contains some formatting bits and the main chunk of code I was working on to retreive data from the API, and cache it in the database.
 
+![screenshot1](https://github.com/benza435/hud-php-weather/blob/main/images/get.png?raw=true)  
+![screenshot1](https://github.com/benza435/hud-php-weather/blob/main/images/show.png?raw=true)
+
 ## But why... doesn't it work as specified?
 
-I went about it in the wrong way. Firstly I tried to host a LAMP server on AWS, which was a journey in itself, burning up around half of the time I had allocated for the project. Secondly I paid no attention to the Laravel framework, attempting the task in raw SQL, PHP and HTML.  
-I don't feel like I was that far from finishing, but time and fatigue eventually got me.
+I went about it in the wrong way. Firstly I tried to host a LAMP server on AWS, which was a journey in itself, burning up around half of the time allocated for the project. Secondly I paid no attention to the Laravel framework, attempting the task in raw SQL, PHP and HTML.
