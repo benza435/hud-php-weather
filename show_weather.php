@@ -9,7 +9,7 @@
   <a href="index.html">home</a>
 <h1>data from weather_test.data_cache:</h1>
 <?php
-include 'connection.php';
+include 'db/connection.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
