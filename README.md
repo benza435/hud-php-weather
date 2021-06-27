@@ -1,41 +1,30 @@
-What's going on so far:
+# A weather app
 
-EC2 container on AWS running Linux, Apache, Mariadb.  
-Locally we have something similar, best practises are slipping today.
+## What?
 
-Data required per day:
+A PHP-centric app which displays five days worth of select data from the MET Office API.
 
-- date
-- one word weather (eg 'cloudy')
-- name of day
-- High temp
-- low temp
-- rain chance
-- wind speed (average)
+## Why?
 
-roughly looks like this:
+A tech test! I'd never properly used PHP before so it was... interesting.
 
-- 2021-06-25T00:00Z
-- summary: 7
-- max temp: 16.958366
-- min temp: 12.831504
-- rain chance: 6%
-- avg wind speed: 7 mph
+## How?
 
-Currently the data from the API is going straight to the frontend. Not a relevant step really but PHP is a bit more of a joke than I thought it was.  
-Next steps - create function on the server to fetch the relevant data, and push it to the db.  
-Then have the frontend request the data from the server, which gets the data from the db.
+The LAMP stack. I am running Apache and mySQL locally, with web content accessible at 127.0.0.1.
 
-when you work locally with this, you need to START THE APACHE SERVER FIRST LOL
+The key components:
 
----
+- Firstly, `get_weather.php`, pulls data directly from the API and displays it in the browser. It stands alone except for the imported API credentials.
+- In `/db` there are SQL scripts to create and seed the database, `weather_test` with two tables:
 
-Setting up a db and table today - db name is 'weather_test', table name is data_cache, user is 'tom'.  
-Rows will be:
+  - `data_cache` stores a sample weather forecast (it was supposed to cache a recent weather forecast, but more on that later).
+  - `significant_codes` stores the 'summary' type data, ie 'sunny' or 'light rain' with their numeric identities.
 
-- day
-- overview
-- temp_max
-- temp_min
-- rain_chance
-- wind
+- `show_weather.php` retreives data from both tables, runs it through some util functions, and displays it in the browser with some minimal styling and icons.
+
+-`utils.php` contains some formatting bits and the main chunk of code I was working on to retreive data from the API, and cache it in the database.
+
+## But why... doesn't it work as specified?
+
+I went about it in the wrong way. Firstly I tried to host a LAMP server on AWS, which was a journey in itself, burning up around half of the time I had allocated for the project. Secondly I paid no attention to the Laravel framework, attempting the task in raw SQL, PHP and HTML.  
+I don't feel like I was that far from finishing, but time and fatigue eventually got me.
